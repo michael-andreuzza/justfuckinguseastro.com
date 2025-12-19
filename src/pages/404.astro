@@ -1,19 +1,16 @@
 ---
 // Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/fundations/elements/Text.astro";
-import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 ---
+
 <BaseLayout hideNavigation={true} hideFooter={true}>
   <section>
-    <Wrapper variant="standard">
-      <Text tag="h1" variant="textLG">
-        404
-      </Text>
-      <Button isLink={true} href="/" size="xs" variant="muted">
-        Go back gome
-      </Button>
+    <Wrapper variant="standard" class="py-24 lg:py-32 text-center">
+      <Wrapper variant="prose">
+        <h1>404</h1>
+        <a href="/"> Go back to the fucking website </a>
+      </Wrapper>
     </Wrapper>
   </section>
 </BaseLayout>

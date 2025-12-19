@@ -5,6 +5,25 @@ const siteUrl = "https://justfuckinguseastro.com";
 const title = "Just Fucking Use Astro";
 const description =
   "A public service announcement for developers still building websites like it's 2012 or shipping full SPAs for marketing sites. Most sites are content plus a few interactive bits. Just fucking use Astro.";
+const seoImageAlt = "Just Fucking Use Astro - A rant about modern web development";
+const facebookImage = `${siteUrl}/opengraph/facebook.png`;
+const twitterImage = `${siteUrl}/opengraph/twitter.png`;
+const openGraphImages = [
+  {
+    url: facebookImage,
+    width: 1200,
+    height: 630,
+    alt: seoImageAlt,
+    type: "image/png",
+  },
+  {
+    url: twitterImage,
+    width: 1200,
+    height: 630,
+    alt: seoImageAlt,
+    type: "image/png",
+  },
+];
 
 // JSON-LD Schema
 const jsonLd = {
@@ -34,15 +53,7 @@ const jsonLd = {
     url: siteUrl,
     title: title,
     description: description,
-    images: [
-      {
-        url: `${siteUrl}/opengraph/facebook.png`,
-        width: 1200,
-        height: 630,
-        alt: "Just Fucking Use Astro - A rant about modern web development",
-        type: "image/png",
-      },
-    ],
+    images: openGraphImages,
     site_name: title,
     type: "website",
     locale: "en_US",
@@ -52,6 +63,10 @@ const jsonLd = {
     site: "@mike_andreuzza",
     cardType: "summary_large_image",
   }}
+  additionalMetaTags={[
+    { name: "twitter:image", content: twitterImage },
+    { name: "twitter:image:alt", content: seoImageAlt },
+  ]}
 />
 
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

@@ -13,8 +13,8 @@
   --accent-light: oklch(0.797 0.118 33.2);
   --pre-bg: oklch(0.145 0 0);
   --pre-foreground: oklch(0.922 0 0);
-  --font-sans: "Geist", sans-serif;
-  --font-mono: "Geist Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Newsreader", serif;
 }
 /* Dark mode - user preference */
 @media (prefers-color-scheme: dark) {
@@ -40,7 +40,7 @@
   --color-pre-bg: var(--pre-bg);
   --color-pre-foreground: var(--pre-foreground);
   --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
 }
 /* Apply base styles */
 body {

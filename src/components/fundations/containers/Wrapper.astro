@@ -10,20 +10,7 @@ const variantClasses = {
   standard: "max-w-7xl mx-auto px-8 w-full",
   // Wrapper for prose blocks - uses Tailwind colors mapped from CSS variables
   prose:
-  "prose prose-base max-w-2xl mx-auto w-full  \
-   prose-headings:font-medium prose-headings:text-foreground \
-   prose-p:text-muted-foreground \
-   prose-strong:text-foreground \
-   prose-a:text-foreground prose-a:border-b prose-a:border-none  \
-   prose-a:transition-colors prose-a:duration-200 \
-   prose-a:hover:text-accent prose-a:hover:border-accent-light \
-   prose-blockquote:border-l-accent prose-blockquote:text-muted-foreground \
-   prose-li:text-muted-foreground \
-   prose-pre:bg-pre-bg prose-pre:text-pre-foreground \
-   prose-pre:rounded-xl prose-pre:scrollbar-hide \
-   prose-tr:border-border prose-thead:border-border \
-   prose-hr:border-border prose-hr:border-t-2 prose-hr:my-12 \
-   prose-em:text-foreground",
+    "prose prose-lg prose-headings:tracking-tight max-w-2xl mx-auto w-full font-serif prose-headings:font-semibold prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-a:text-foreground prose-a:border-b prose-a:border-none prose-a:transition-colors prose-a:duration-200 prose-a:hover:text-accent prose-a:hover:border-accent-light prose-blockquote:border-l-muted-background prose-blockquote:text-muted-foreground prose-li:text-muted-foreground prose-pre:bg-pre-bg prose-pre:text-pre-foreground prose-pre:rounded-xl prose-pre:scrollbar-hide prose-tr:border-border prose-thead:border-border prose-hr:border-border prose-hr:border-t-2 prose-hr:my-12 prose-em:text-foreground prose-headings:font-sans prose-blockquote:my-14",
 };
 // Combine the classes for the specified variant with any extra classes
 const classes = `${variantClasses[variant]} ${extraClass}`.trim();

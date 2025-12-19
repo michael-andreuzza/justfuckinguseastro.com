@@ -1,0 +1,21 @@
+{
+  "$ref": "#/definitions/simple",
+  "definitions": {
+    "simple": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "page"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

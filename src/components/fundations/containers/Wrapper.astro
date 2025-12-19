@@ -7,20 +7,24 @@ const { variant = "standard", class: extraClass = "" } = Astro.props;
 // Map each variant to its specific classes
 const variantClasses = {
   // All purpose wrapper
-  standard: " max-w-7xl mx-auto px-8 w-full",
-  // Wrapper for prose blocks
+  standard: "max-w-7xl mx-auto px-8 w-full",
+  // Wrapper for prose blocks - uses Tailwind colors mapped from CSS variables
   prose:
-    "prose prose-base max-w-3xl mx-auto w-full \
-   prose-headings:font-medium prose-headings:text-base-dark \
-   prose-p:text-base-700 prose-strong:text-base-dark \
+    "prose prose-base max-w-2xl mx-auto w-full \
+   prose-headings:font-medium prose-headings:text-foreground \
+   prose-p:text-muted-foreground \
+   prose-strong:text-foreground \
    prose-a:text-accent prose-a:border-b prose-a:border-accent prose-a:no-underline \
    prose-a:transition-colors prose-a:duration-200 \
-   prose-a:hover:text-accent-light prose-a:hover:border-accent \
-   prose-blockquote:border-l-accent prose-blockquote:text-base-600 \
+   prose-a:hover:text-accent-light prose-a:hover:border-accent-light \
+   prose-blockquote:border-l-accent prose-blockquote:text-muted-foreground \
    prose-li:marker:text-accent \
-   prose-pre:bg-base-light \
+   prose-li:text-muted-foreground \
+   prose-pre:bg-pre-bg prose-pre:text-pre-foreground \
    prose-pre:rounded-xl prose-pre:scrollbar-hide \
-   prose-tr:border-base-200 prose-thead:border-base-light",
+   prose-tr:border-border prose-thead:border-border \
+   prose-hr:border-border prose-hr:border-t-2 prose-hr:my-12 \
+   prose-em:text-foreground",
 };
 // Combine the classes for the specified variant with any extra classes
 const classes = `${variantClasses[variant]} ${extraClass}`.trim();

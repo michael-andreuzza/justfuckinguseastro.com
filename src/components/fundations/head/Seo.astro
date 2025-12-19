@@ -1,31 +1,57 @@
 ---
 import { AstroSeo } from "@astrolib/seo";
+
+const siteUrl = "https://justfuckinguseastro.com";
+const title = "Just Fucking Use Astro";
+const description =
+  "A public service announcement for developers still building websites like it's 2012 or shipping full SPAs for marketing sites. Most sites are content plus a few interactive bits. Just fucking use Astro.";
+
+// JSON-LD Schema
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: title,
+  url: siteUrl,
+  description: description,
+  author: {
+    "@type": "Person",
+    name: "Michael Andreuzza",
+    url: "https://michaelandreuzza.com",
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Michael Andreuzza",
+    url: "https://michaelandreuzza.com",
+  },
+};
 ---
 
 <AstroSeo
-  title="Your Page Title"
-  description="A detailed description of your page content."
-  canonical="https://yourwebsite.com/current-page"
+  title={title}
+  description={description}
+  canonical={siteUrl}
   openGraph={{
-    url: "https://yourwebsite.com/current-page",
-    title: "Your Page Title",
-    description: "A detailed description of your page content.",
+    url: siteUrl,
+    title: title,
+    description: description,
     images: [
       {
-        url: "https://yourwebsite.com/og-image.jpg",
+        url: `${siteUrl}/opengraph/facebook.png`,
         width: 1200,
         height: 630,
-        alt: "Open Graph Image Alt",
-        type: "image/jpeg",
+        alt: "Just Fucking Use Astro - A rant about modern web development",
+        type: "image/png",
       },
     ],
-    site_name: "Your Site Name",
+    site_name: title,
     type: "website",
     locale: "en_US",
   }}
   twitter={{
-    handle: "@yourhandle",
-    site: "@yourwebsite",
+    handle: "@mike_andreuzza",
+    site: "@mike_andreuzza",
     cardType: "summary_large_image",
   }}
 />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

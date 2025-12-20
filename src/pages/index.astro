@@ -1,400 +1,313 @@
 ---
-// Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+
+const content = [
+  {
+    label: "AUTHOR",
+    text: `This rant was written by <a href="https://michaelandreuzza.com/" class="underline hover:no-underline">Michael Andreuzza</a> the motherfucker who made this fucking rant fucking possible when he had nothing to do.`,
+  },
+  {
+    label: "SUMMARY",
+    text: `<strong>Most sites are content plus a few interactive bits.</strong> If you're shipping a full SPA for a fucking marketing site, you're not "modern." You're a goddamn irresponsible jackass, lazy as shit with architecture, and actively making the web a worse fucking shithole for everyone. Fuck you.`,
+  },
+  {
+    label: "WHAT THE FUCK IS THIS SHIT?",
+    text: `This is a public service announcement for braindead dumbass motherfucking developers still building websites like it's 2012 <em>or</em> 2022 and acting proud of it like they invented sliced fucking bread, you absolute morons.`,
+  },
+  {
+    label: "TWO STUPID RELIGIONS",
+    items: [
+      `<strong>"No frameworks ever."</strong> Congrats, you fucking idiot, you rebuilt a worse CMS with worse routing, worse builds, and zero goddamn guardrails. Your shitty site is one junior dev away from collapsing into an unreadable pile of HTML sadness, tears, and your own fucking incompetence, dipshit.`,
+      `<strong>"SPA for everything."</strong> Congrats, you pretentious motherfucker, you shipped hundreds of kilobytes of JavaScript bullshit to render a headline, three buttons, and your fragile fucking ego. Your users didn't consent to running your frontend thesis in their browser, you selfish piece of shit asshole.`,
+    ],
+  },
+  {
+    label: "ASTRO EXISTS BECAUSE",
+    items: [
+      "fucking pages",
+      "fucking content",
+      "fucking navigation",
+      "fucking forms",
+      "a couple fucking interactive widgets",
+    ],
+    suffix:
+      "Not a goddamn desktop application duct-taped into a browser tab with delusions of grandeur, you delusional assclown.",
+  },
+  {
+    label: 'WHY ASTRO INSTEAD OF "PURE HTML" NIRVANA BULLSHIT?',
+    text: `Because "pure HTML" at scale is a fucking lie you tell yourself until the site hits page 37 and everything quietly catches fire and burns down around you like your pathetic career, motherfucker.`,
+  },
+  {
+    label: "THEN THIS SHIT HAPPENS, ASSHOLE",
+    items: [
+      "you copy and paste layouts like it's 2009 and you've learned absolutely fucking nothing, you braindead bastard",
+      'your "tiny bit of JS" becomes a cursed spaghetti altar of suffering and bullshit',
+      "content turns into an untyped clusterfuck no one fucking understands",
+      "the build process becomes duct tape, shell scripts, prayers, and eventual fucking alcoholism because of your incompetence",
+    ],
+    suffix: `Astro gives you structure without forcing you into "everything must be client-side or you're a fucking coward," you spineless shit.`,
+  },
+  {
+    label: "YOU GET, MOTHERFUCKER",
+    items: [
+      "components without joining a goddamn JS framework cult like a brainwashed idiot",
+      "actual layouts instead of copy-paste hell, dumbass",
+      "sane file-based routing that doesn't make you want to fucking scream",
+      "typed content collections so you stop shipping broken frontmatter like a fucking amateur piece of shit",
+      "the ability to use React, Vue, Svelte, or whatever the fuck only when needed",
+    ],
+  },
+  {
+    label: "DECEMBER 2025",
+    text: `And yes, this is still true in December 2025: <strong>Astro ships zero client-side JavaScript by default.</strong> No tricks. No asterisks. No bullshit hydration tax. Nothing.`,
+  },
+  {
+    label:
+      "WHY ASTRO INSTEAD OF DEFAULTING TO REACT FOR EVERY GODDAMN THING, YOU FUCKING SHEEP?",
+    text: `Because React is great. <strong>For apps, dipshit.</strong><br><br>Most websites are not fucking apps, no matter how much you desperately want them to be, you delusional motherfucker.`,
+  },
+  {
+    label: "IF YOUR SITE IS",
+    items: [
+      "marketing pages",
+      "docs",
+      "a blog",
+      "landing pages",
+      "an ecommerce front (not a client-side shopping simulator for masochists)",
+    ],
+    suffix: `…then shipping a full SPA is like bringing a fucking forklift to carry a motherfucking sandwich, then congratulating yourself for "scalability" and "best practices," you insufferable jackass.`,
+  },
+  {
+    label: "PHILOSOPHY",
+    text: `Astro is the "HTML-first, JS-when-needed" workflow that SPA developers <em>say</em> they follow and then immediately ignore like the lying motherfucking bastards they are.`,
+  },
+  {
+    label:
+      "ISLANDS: THE THING YOU'LL NOD ABOUT AND STILL FUCKING MISUSE LIKE THE IDIOT YOU ARE",
+    text: `Here's the mental model. Pay the fuck attention, dipshit motherfucker.<br><br><strong>Your page is static by default. Interactivity is the exception, not the fucking rule.</strong><br><br>Want a carousel? Fine. Make it an island.<br>Want a pricing toggle? Island.<br>Want search? Island.<br><br>Everything else stays server-rendered, boring, fast, and quiet — like a well-behaved website that respects its users.`,
+  },
+  {
+    label: "THAT FUCKING MEANS",
+    items: [
+      "dramatically less JavaScript shipped to innocent users who didn't ask for your bullshit",
+      "fewer hydration nightmares that wake your dumbass up at 3am",
+      'fewer "why did this fucking re-render?" panic attacks and Slack meltdowns',
+      "a page that works immediately instead of after a JS warm-up ritual from hell that you created, asshole",
+    ],
+  },
+  {
+    label: "RULE",
+    text: `You don't need to hydrate the fucking world, you absolute moron. You need to hydrate the <em>one</em> damn widget and leave the rest the fuck alone, jackass.`,
+  },
+  {
+    label: 'THE "I NEED A FRAMEWORK" WAKE-UP CALL, MOTHERFUCKER',
+    text: "Just fucking use Astro when:",
+    items: [
+      "your site is mostly content with some UI sprinkled on top, dumbass",
+      "SEO actually matters and isn't just bullshit buzzwords in your shitty deck",
+      "you want components without paying a stupid fucking SPA performance tax",
+      "you want React or Svelte only where it makes sense, not everywhere like a goddamn lunatic",
+      "your interactivity is localized instead of infecting the whole goddamn page like a fucking virus",
+      "you want a site that doesn't turn into a maintenance nightmare at 50+ pages because you're too stupid to plan ahead",
+    ],
+  },
+  {
+    label: "NOTE",
+    text: `If you're thinking "but I can do that with vanilla JS", yes, and you can also eat soup with a fucking fork, you masochistic dipshit. Stop pretending that suffering equals skill, you self-righteous martyr asshole.`,
+  },
+  {
+    label: "WHEN YOU SHOULD NOT USE ASTRO, DUMBFUCK",
+    text: "Astro is not your magic wand if you're building:",
+    items: [
+      "a heavy client-side app with shared state everywhere, jackass",
+      "real-time collaborative tools for fuck's sake",
+      "interfaces where literally everything is interactive all the fucking damn time",
+      "complex offline-first behavior that you'll probably fuck up anyway",
+    ],
+  },
+  {
+    label: "IF YOUR UI IS BASICALLY A CONSTANTLY RUNNING PROGRAM",
+    text: "Stop cosplaying as a website like a fucking poser and just fucking use:",
+    items: [
+      "React / Next, motherfucker",
+      "SvelteKit, asshole",
+      "Remix, dipshit",
+      "whatever your incompetent team actually understands without fucking crying",
+    ],
+    suffix:
+      'Astro is for sites that behave like websites, with selective "app" bullshit only where it belongs.',
+  },
+  {
+    label: '"BUT WHAT ABOUT BLOAT?"...SHUT THE FUCK UP YOU WEIRDO',
+    text: `If you use Astro correctly, it <strong>does not ship what you don't use</strong>. That's the whole fucking point, genius. Are you fucking stupid?<br><br>If your Astro site ships 500KB of JavaScript, congratulations: you ignored the entire goddamn philosophy and rebuilt a SPA like a complete fucking idiot. You dumb motherfucker.<br><br>That's not Astro's fault, dumbass. That's you being addicted to unnecessary complexity like it's fucking heroin. Get help, asshole.`,
+  },
+  {
+    label: "THE REAL PROBLEM ISN'T ASTRO VS REACT, YOU MORON",
+    text: `The real problem is developers who can't evaluate the fucking job and treat tool choice like a personality trait or a religion. You're the fucking problem, asshole.<br><br>Some dipshits build everything like it's a brochure from 1997.<br>Other dumbfucks build everything like it's Figma plus Firebase plus a goddamn existential breakdown and a mental fucking crisis.`,
+  },
+  {
+    label: "PICK BASED ON REALITY",
+    text: "Not your pathetic feelings, you emotional willy-nilli:",
+    items: [
+      "Website? <strong>Fucking Astro, dumbass.</strong>",
+      "App? <strong>Full framework, moron.</strong>",
+      "Mixed? <strong>Astro with islands, you fucking genius — finally getting it, shithead?</strong>",
+    ],
+  },
+  {
+    label: "ADVICE",
+    text: `Stop treating tools like identity, you insecure motherfucker. It's engineering. Act like a goddamn professional for once in your worthless career.`,
+  },
+];
+
+const inspirations = [
+  {
+    url: "https://motherfuckingwebsite.com/",
+    name: "motherfuckingwebsite.com",
+    desc: "fucking classic",
+  },
+  {
+    url: "https://justfuckingusetailwind.com/",
+    name: "justfuckingusetailwind.com",
+    desc: "fucking dope",
+  },
+  {
+    url: "https://justfuckingusehttp.com/",
+    name: "justfuckingusehttp.com",
+    desc: "the OG shit",
+  },
+  {
+    url: "https://justfuckingusereact.com/",
+    name: "justfuckingusereact.com",
+    desc: "for when you actually need the damn thing",
+  },
+  {
+    url: "https://justfuckingusecss.com/",
+    name: "justfuckingusecss.com",
+    desc: "stop fighting it, dipshit",
+  },
+  {
+    url: "https://www.justfuckinguserails.com/",
+    name: "justfuckinguserails.com",
+    desc: "Ruby motherfuckers unite",
+  },
+];
 ---
 
 <BaseLayout>
-  <section>
-    <Wrapper variant="standard" class="py-24 lg:py-32">
-      <Wrapper variant="prose">
-        <section>
-          <h1>Just fucking use Astro</h1>
-          <p>
-            <em
-              >(Unless you're building an actual app, you sweet, fragile,
-              over-engineering dipshit motherfucker.)</em
-            >
-          </p>
-          <blockquote class="text-sm">
-            This rant was written by
-            <a href="https://michaelandreuzza.com/">Michael Andreuzza</a> the motherfucker
-            who made this fucking rant fucking possible when he had nothing to do.
-          </blockquote>
+  <Wrapper variant="standard" class="py-8 lg:py-12">
+    <header>
+      <Text
+        tag="h1"
+        variant="display5XL"
+        class="font-bold leading-[0.9] tracking-tighter uppercase"
+      >
+        Just fucking<br />use Astro
+      </Text>
+      <Text
+        tag="p"
+        variant="textLG"
+        class="mt-4 max-w-xl text-muted-foreground"
+      >
+        (Unless you're building an actual app, you sweet, fragile,
+        over-engineering dipshit motherfucker.)
+      </Text>
+    </header>
 
-          <p>
-            <strong>Most sites are content plus a few interactive bits.</strong
-            ><br />
-            If you're shipping a full SPA for a fucking marketing site, you're not
-            "modern." You're a goddamn irresponsible jackass, lazy as shit with architecture,
-            and actively making the web a worse fucking shithole for everyone. Fuck
-            you.
-          </p>
-          <h2>What the fuck is this shit?</h2>
-          <p>
-            This is a public service announcement for braindead dumbass
-            motherfucking developers still building websites like it's 2012 <em
-              >or</em
-            > 2022 and acting proud of it like they invented sliced fucking bread,
-            you absolute morons.
-          </p>
-          <p>You've got two equally stupid fucking religions:</p>
-          <ul>
-            <li>
-              <strong>"No frameworks ever."</strong>
-              Congrats, you fucking idiot, you rebuilt a worse CMS with worse routing,
-              worse builds, and zero goddamn guardrails. Your shitty site is one
-              junior dev away from collapsing into an unreadable pile of HTML sadness,
-              tears, and your own fucking incompetence, dipshit.
-            </li>
-            <li>
-              <strong>"SPA for everything."</strong>
-              Congrats, you pretentious motherfucker, you shipped hundreds of kilobytes
-              of JavaScript bullshit to render a headline, three buttons, and your
-              fragile fucking ego. Your users didn't consent to running your frontend
-              thesis in their browser, you selfish piece of shit asshole.
-            </li>
-          </ul>
-          <p>Astro exists because most of the goddamn web is:</p>
-          <ul>
-            <li>fucking pages</li>
-            <li>fucking content</li>
-            <li>fucking navigation</li>
-            <li>fucking forms</li>
-            <li>a couple fucking interactive widgets</li>
-          </ul>
-          <p>
-            Not a goddamn desktop application duct-taped into a browser tab with
-            delusions of grandeur, you delusional assclown.
-          </p>
-          <h2>Why Astro instead of "pure HTML" nirvana bullshit?</h2>
-          <p>
-            Because "pure HTML" at scale is a fucking lie you tell yourself
-            until the site hits page 37 and everything quietly catches fire and
-            burns down around you like your pathetic career, motherfucker.
-          </p>
-          <p>Then this shit happens, asshole:</p>
-          <ul>
-            <li>
-              you copy and paste layouts like it's 2009 and you've learned
-              absolutely fucking nothing, you braindead bastard
-            </li>
-            <li>
-              your "tiny bit of JS" becomes a cursed spaghetti altar of
-              suffering and bullshit
-            </li>
-            <li>
-              content turns into an untyped clusterfuck no one fucking
-              understands
-            </li>
-            <li>
-              the build process becomes duct tape, shell scripts, prayers, and
-              eventual fucking alcoholism because of your incompetence
-            </li>
-          </ul>
-          <p>
-            Astro gives you structure without forcing you into "everything must
-            be client-side or you're a fucking coward," you spineless shit.
-          </p>
-          <p>You get, motherfucker:</p>
-          <ul>
-            <li>
-              components without joining a goddamn JS framework cult like a
-              brainwashed idiot
-            </li>
-            <li>actual layouts instead of copy-paste hell, dumbass</li>
-            <li>
-              sane file-based routing that doesn't make you want to fucking
-              scream
-            </li>
-            <li>
-              typed content collections so you stop shipping broken frontmatter
-              like a fucking amateur piece of shit
-            </li>
-            <li>
-              the ability to use React, Vue, Svelte, or whatever the fuck <em
-                >only</em
-              > when needed
-            </li>
-          </ul>
-          <p>
-            And yes, this is still true in December 2025:
-            <strong>Astro ships zero client-side JavaScript by default.</strong>
-            No tricks. No asterisks. No bullshit hydration tax. Nothing.
-          </p>
-          <h2>
-            Why Astro instead of defaulting to React for every goddamn thing,
-            you fucking sheep?
-          </h2>
-          <p>Because React is great. For apps, dipshit.</p>
-          <p>
-            Most websites are not fucking apps, no matter how much you
-            desperately want them to be, you delusional motherfucker.
-          </p>
-          <p>If your site is:</p>
-          <ul>
-            <li>marketing pages</li>
-            <li>docs</li>
-            <li>a blog</li>
-            <li>landing pages</li>
-            <li>
-              an ecommerce <em>front</em> (not a client-side shopping simulator for
-              masochists)
-            </li>
-          </ul>
-          <p>
-            …then shipping a full SPA is like bringing a fucking forklift to
-            carry a motherfucking sandwich, then congratulating yourself for
-            "scalability" and "best practices," you insufferable jackass.
-          </p>
-          <p>
-            Astro is the "HTML-first, JS-when-needed" workflow that SPA
-            developers
-            <em>say</em> they follow and then immediately ignore like the lying motherfucking
-            bastards they are.
-          </p>
-          <h2>
-            Islands: the thing you'll nod about and still fucking misuse like
-            the idiot you are
-          </h2>
-          <p>
-            Here's the mental model. Pay the fuck attention, dipshit
-            motherfucker.
-          </p>
-          <p>
-            <strong>Your page is static by default.</strong>
-            <strong
-              >Interactivity is the exception, not the fucking rule.</strong
-            >
-          </p>
-          <p>
-            Want a carousel? Fine. Make it an island.<br />
-            Want a pricing toggle? Island.<br />
-            Want search? Island.
-          </p>
-          <p>
-            Everything else stays server-rendered, boring, fast, and quiet —
-            like a well-behaved website that respects its users.
-          </p>
-          <p>That fucking means:</p>
-          <ul>
-            <li>
-              dramatically less JavaScript shipped to innocent users who didn't
-              ask for your bullshit
-            </li>
-            <li>fewer hydration nightmares that wake your dumbass up at 3am</li>
-            <li>
-              fewer "why did this fucking re-render?" panic attacks and Slack
-              meltdowns
-            </li>
-            <li>
-              a page that works immediately instead of after a JS warm-up ritual
-              from hell that you created, asshole
-            </li>
-          </ul>
-          <p>
-            You don't need to hydrate the fucking world, you absolute moron.<br
-            />
-            You need to hydrate the <em>one</em> damn widget and leave the rest the
-            fuck alone, jackass.
-          </p>
-          <h2>The "I need a framework" wake-up call, motherfucker</h2>
-          <p>Just fucking use Astro when:</p>
-          <ul>
-            <li>
-              your site is mostly content with some UI sprinkled on top, dumbass
-            </li>
-            <li>
-              SEO actually matters and isn't just bullshit buzzwords in your
-              shitty deck
-            </li>
-            <li>
-              you want components without paying a stupid fucking SPA
-              performance tax
-            </li>
-            <li>
-              you want React or Svelte only where it makes sense, not everywhere
-              like a goddamn lunatic
-            </li>
-            <li>
-              your interactivity is localized instead of infecting the whole
-              goddamn page like a fucking virus
-            </li>
-            <li>
-              you want a site that doesn't turn into a maintenance nightmare at
-              50+ pages because you're too stupid to plan ahead
-            </li>
-          </ul>
-          <p>
-            If you're thinking "but I can do that with vanilla JS", yes, and you
-            can also eat soup with a fucking fork, you masochistic dipshit. Stop
-            pretending that suffering equals skill, you self-righteous martyr
-            asshole.
-          </p>
-          <h2>When you should not use Astro, dumbfuck</h2>
-          <p>Astro is not your magic wand if you're building:</p>
-          <ul>
-            <li>
-              a heavy client-side app with shared state everywhere, jackass
-            </li>
-            <li>real-time collaborative tools for fuck's sake</li>
-            <li>
-              interfaces where literally everything is interactive all the
-              fucking damn time
-            </li>
-            <li>
-              complex offline-first behavior that you'll probably fuck up anyway
-            </li>
-          </ul>
-          <p>
-            If your UI is basically a constantly running program, stop
-            cosplaying as a website like a fucking poser and just fucking use:
-          </p>
-          <ul>
-            <li>React / Next, motherfucker</li>
-            <li>SvelteKit, asshole</li>
-            <li>Remix, dipshit</li>
-            <li>
-              whatever your incompetent team actually understands without
-              fucking crying
-            </li>
-          </ul>
-          <p>
-            Astro is for sites that behave like websites, with selective "app"
-            bullshit only where it belongs.
-          </p>
-          <h2>"But what about bloat?"...Shut the fuck up you weirdo</h2>
-          <p>
-            If you use Astro correctly, it <strong
-              >does not ship what you don't use</strong
-            >. That's the whole fucking point, genius. Are you fucking stupid?
-          </p>
-          <p>
-            If your Astro site ships 500KB of JavaScript, congratulations: you
-            ignored the entire goddamn philosophy and rebuilt a SPA like a
-            complete fucking idiot. You dumb motherfucker.
-          </p>
-          <p>
-            That's not Astro's fault, dumbass. That's you being addicted to
-            unnecessary complexity like it's fucking heroin. Get help, asshole.
-          </p>
-          <h2>The real problem isn't Astro vs React, you moron</h2>
-          <p>
-            The real problem is developers who can't evaluate the fucking job
-            and treat tool choice like a personality trait or a religion. You're
-            the fucking problem, asshole.
-          </p>
-          <ul>
-            <li>
-              Some dipshits build everything like it's a brochure from 1997.
-            </li>
-            <li>
-              Other dumbfucks build everything like it's Figma plus Firebase
-              plus a goddamn existential breakdown and a mental fucking crisis.
-            </li>
-          </ul>
-          <p>
-            Pick based on reality, not your pathetic feelings, you emotional
-            willy-nilli:
-          </p>
-          <ul>
-            <li><strong>Website?</strong> Fucking Astro, dumbass.</li>
-            <li><strong>App?</strong> Full framework, moron.</li>
-            <li>
-              <strong>Mixed?</strong> Astro with islands, you fucking genius — finally
-              getting it, shithead?
-            </li>
-          </ul>
-          <p>
-            Stop treating tools like identity, you insecure motherfucker.<br />
-            It's engineering. Act like a goddamn professional for once in your worthless
-            career.
-          </p>
-          <h2>Now go ship something fast, asshole</h2>
-          <p>
-            If you're building a mostly-content website and still reaching for a
-            full SPA like a fucking amateur: you're not being advanced, dipshit.
-            you're being lazy, insecure, and shit at trade-offs like the
-            incompetent motherfucker you are.
-          </p>
-          <p>
-            Go build something that loads fast, ships less JavaScript, and
-            doesn't actively hate your users, you piece of shit. Now fuck off
-            and code.
-          </p>
-          <div class="footer-section">
-            <p>
-              <strong
-                >Also: if you want the fucking vibe, these were the obvious
-                goddamn inspirations, you curious bastard:</strong
-              >
-            </p>
-
-            <p>
-              Inspired by all these badass examples that came before, assholes:
-            </p>
-            <ul>
-              <li>
-                <small>
-                  <a
-                    href="https://motherfuckingwebsite.com/"
-                    target="_blank"
-                    rel="noopener">motherfuckingwebsite.com</a
-                  > — fucking classic
-                </small>
-              </li>
-              <li>
-                <small>
-                  <a
-                    href="https://justfuckingusetailwind.com/"
-                    target="_blank"
-                    rel="noopener">justfuckingusetailwind.com</a
-                  > — fucking dope
-                </small>
-              </li>
-              <li>
-                <small>
-                  <a
-                    href="https://justfuckingusehttp.com/"
-                    target="_blank"
-                    rel="noopener">justfuckingusehttp.com</a
-                  > — the OG shit
-                </small>
-              </li>
-              <li>
-                <small>
-                  <a
-                    href="https://justfuckingusereact.com/"
-                    target="_blank"
-                    rel="noopener">justfuckingusereact.com</a
-                  > — for when you actually need the damn thing
-                </small>
-              </li>
-              <li>
-                <small>
-                  <a
-                    href="https://justfuckingusecss.com/"
-                    target="_blank"
-                    rel="noopener">justfuckingusecss.com</a
-                  > — stop fighting it, dipshit
-                </small>
-              </li>
-              <li>
-                <small>
-                  <a
-                    href="https://www.justfuckinguserails.com/"
-                    target="_blank"
-                    rel="noopener">justfuckinguserails.com</a
-                  > — Ruby motherfuckers unite
-                </small>
-              </li>
-            </ul>
-            <p>
-              <em>Now stop reading and go fucking build something, asshole.</em>
-            </p>
+    <div class="mt-12 text-sm leading-relaxed divide-y divide-border">
+      {
+        content.map((item) => (
+          <div class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-4 py-8 ">
+            <Text tag="p" variant="textXS" class=" uppercase tracking-wide">
+              {item.label}
+            </Text>
+            <div class="text-muted">
+              {item.text && (
+                <Text tag="p" variant="textSM" set:html={item.text} />
+              )}
+              {item.items && (
+                <div class={item.text ? "mt-2" : ""}>
+                  {item.items.map((listItem) => (
+                    <Text tag="p" variant="textSM" set:html={`— ${listItem}`} />
+                  ))}
+                </div>
+              )}
+              {item.suffix && (
+                <Text
+                  tag="p"
+                  variant="textSM"
+                  class="mt-3"
+                  set:html={item.suffix}
+                />
+              )}
+            </div>
           </div>
-        </section>
-      </Wrapper>
-    </Wrapper>
-  </section>
+        ))
+      }
+    </div>
+
+    <section class="mt-12">
+      <Text
+        tag="h2"
+        variant="displayXL"
+        class="font-bold text-balance leading-[0.9] tracking-tighter uppercase"
+      >
+        Now go ship something fast, asshole.
+      </Text>
+      <Text tag="p" variant="textSM" class="mt-4 max-w-xl text-muted">
+        If you're building a mostly-content website and still reaching for a
+        full SPA like a fucking amateur: you're not being advanced, dipshit.
+        You're being lazy, insecure, and shit at trade-offs like the incompetent
+        motherfucker you are.
+      </Text>
+      <Text tag="p" variant="textSM" class="mt-3 max-w-xl text-muted">
+        Go build something that loads fast, ships less JavaScript, and doesn't
+        actively hate your users, you piece of shit. Now fuck off and code.
+      </Text>
+    </section>
+
+    <footer class="mt-12 leading-relaxed">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 py-3 border-t border-border"
+      >
+        <Text
+          tag="p"
+          variant="textXS"
+          class="text-muted uppercase tracking-wide">INSPIRATIONS</Text
+        >
+        <div>
+          <Text tag="p" variant="textSM" class="text-muted">
+            Also: if you want the fucking vibe, these were the obvious goddamn
+            inspirations, you curious bastard:
+          </Text>
+          <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1">
+            {
+              inspirations.map((link) => (
+                <Text tag="p" variant="textSM" class="text-muted">
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener"
+                    class="underline hover:no-underline"
+                  >
+                    {link.name}
+                  </a>{" "}
+                  — {link.desc}
+                </Text>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+      <Text
+        tag="p"
+        variant="textBase"
+        class="text-muted py-3 border-t border-border"
+      >
+        Now stop reading and go fucking build something, asshole.
+      </Text>
+    </footer>
+  </Wrapper>
 </BaseLayout>

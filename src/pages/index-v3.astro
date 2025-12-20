@@ -1,0 +1,387 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<BaseLayout>
+  <Wrapper variant="standard" class="py-8 lg:py-12">
+    <header>
+      <h1
+        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter uppercase"
+      >
+        Just fucking<br />use Astro
+      </h1>
+      <p class="text-sm mt-4 max-w-md text-black/60 dark:text-white/60">
+        (Unless you're building an actual app, you sweet, fragile,
+        over-engineering dipshit motherfucker.)
+      </p>
+    </header>
+
+    <div
+      class="mt-12 grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-1 text-sm leading-relaxed"
+    >
+      <p class="text-black/50 dark:text-white/50">author</p>
+      <p>
+        <a
+          href="https://michaelandreuzza.com/"
+          class="underline hover:no-underline">Michael Andreuzza</a
+        >
+        — the motherfucker who made this rant possible when he had nothing to do.
+      </p>
+
+      <p class="text-black/50 dark:text-white/50 mt-6 lg:mt-8">summary</p>
+      <p class="mt-6 lg:mt-8">
+        <strong>Most sites are content plus a few interactive bits.</strong>
+        If you're shipping a full SPA for a fucking marketing site, you're not "modern."
+        You're a goddamn irresponsible jackass, lazy as shit with architecture, and
+        actively making the web a worse fucking shithole for everyone. Fuck you.
+      </p>
+    </div>
+
+    <section class="mt-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-1 text-sm leading-relaxed"
+      >
+        <h2
+          class="text-xl font-bold uppercase tracking-tight lg:text-base lg:font-normal lg:normal-case lg:text-black/50 lg:dark:text-white/50"
+        >
+          What is this?
+        </h2>
+        <div>
+          <p>
+            This is a public service announcement for braindead dumbass
+            motherfucking developers still building websites like it's 2012 <em
+              >or</em
+            > 2022 and acting proud of it like they invented sliced fucking bread,
+            you absolute morons.
+          </p>
+          <p class="mt-3">You've got two equally stupid fucking religions:</p>
+          <p class="mt-2">
+            <strong>"No frameworks ever."</strong> Congrats, you fucking idiot, you
+            rebuilt a worse CMS with worse routing, worse builds, and zero goddamn
+            guardrails. Your shitty site is one junior dev away from collapsing into
+            an unreadable pile of HTML sadness.
+          </p>
+          <p class="mt-2">
+            <strong>"SPA for everything."</strong> Congrats, you pretentious motherfucker,
+            you shipped hundreds of kilobytes of JavaScript bullshit to render a
+            headline, three buttons, and your fragile fucking ego.
+          </p>
+        </div>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">the web is</p>
+        <p class="mt-6">
+          fucking pages, fucking content, fucking navigation, fucking forms, a
+          couple fucking interactive widgets — not a goddamn desktop application
+          duct-taped into a browser tab with delusions of grandeur.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-1 text-sm leading-relaxed"
+      >
+        <h2
+          class="text-xl font-bold uppercase tracking-tight lg:text-base lg:font-normal lg:normal-case lg:text-black/50 lg:dark:text-white/50"
+        >
+          Why not pure HTML?
+        </h2>
+        <div>
+          <p>
+            Because "pure HTML" at scale is a fucking lie you tell yourself
+            until the site hits page 37 and everything quietly catches fire
+            around you like your pathetic career.
+          </p>
+          <p class="mt-3">Then this shit happens:</p>
+          <p class="mt-1">— you copy and paste layouts like it's 2009</p>
+          <p>— your "tiny bit of JS" becomes a cursed spaghetti altar</p>
+          <p>— content turns into an untyped clusterfuck</p>
+          <p>
+            — the build process becomes duct tape, shell scripts, and prayers
+          </p>
+        </div>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">astro gives you</p>
+        <div class="mt-6">
+          <p>— components without joining a JS framework cult</p>
+          <p>— actual layouts instead of copy-paste hell</p>
+          <p>— sane file-based routing</p>
+          <p>— typed content collections</p>
+          <p>— React, Vue, Svelte only when needed</p>
+        </div>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">december 2025</p>
+        <p class="mt-6">
+          <strong>Astro ships zero client-side JavaScript by default.</strong> No
+          tricks. No asterisks. No bullshit hydration tax. Nothing.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-1 text-sm leading-relaxed"
+      >
+        <h2
+          class="text-xl font-bold uppercase tracking-tight lg:text-base lg:font-normal lg:normal-case lg:text-black/50 lg:dark:text-white/50"
+        >
+          Why not React?
+        </h2>
+        <div>
+          <p>
+            Because React is great. <strong>For apps, dipshit.</strong>
+          </p>
+          <p class="mt-3">
+            Most websites are not fucking apps, no matter how much you
+            desperately want them to be.
+          </p>
+        </div>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">if your site is</p>
+        <p class="mt-6">
+          marketing pages, docs, a blog, landing pages, ecommerce front — then
+          shipping a full SPA is like bringing a forklift to carry a sandwich,
+          then congratulating yourself for "scalability."
+        </p>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">philosophy</p>
+        <p class="mt-6">
+          Astro is the "HTML-first, JS-when-needed" workflow that SPA developers <em
+            >say</em
+          > they follow and then immediately ignore like the lying bastards they
+          are.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-1 text-sm leading-relaxed"
+      >
+        <h2
+          class="text-xl font-bold uppercase tracking-tight lg:text-base lg:font-normal lg:normal-case lg:text-black/50 lg:dark:text-white/50"
+        >
+          Islands
+        </h2>
+        <div>
+          <p>
+            <strong
+              >Your page is static by default. Interactivity is the exception,
+              not the rule.</strong
+            >
+          </p>
+          <p class="mt-3">
+            Carousel? Island. Pricing toggle? Island. Search? Island.
+          </p>
+          <p class="mt-3">
+            Everything else stays server-rendered, boring, fast, and quiet —
+            like a well-behaved website that respects its users.
+          </p>
+        </div>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">that means</p>
+        <div class="mt-6">
+          <p>— dramatically less JavaScript shipped</p>
+          <p>— fewer hydration nightmares at 3am</p>
+          <p>— fewer "why did this re-render?" panic attacks</p>
+          <p>— a page that works immediately</p>
+        </div>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">rule</p>
+        <p class="mt-6">
+          You don't need to hydrate the fucking world. You need to hydrate the <em
+            >one</em
+          > damn widget and leave the rest alone.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-1 text-sm leading-relaxed"
+      >
+        <h2
+          class="text-xl font-bold uppercase tracking-tight lg:text-base lg:font-normal lg:normal-case lg:text-black/50 lg:dark:text-white/50"
+        >
+          When to use
+        </h2>
+        <div>
+          <p>— your site is mostly content with some UI sprinkled on top</p>
+          <p>— SEO actually matters</p>
+          <p>— you want components without the SPA performance tax</p>
+          <p>— you want React or Svelte only where it makes sense</p>
+          <p>— your interactivity is localized, not infecting the whole page</p>
+          <p>— you want a site that doesn't become a nightmare at 50+ pages</p>
+        </div>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">note</p>
+        <p class="mt-6">
+          If you're thinking "but I can do that with vanilla JS", yes, and you
+          can also eat soup with a fork. Stop pretending that suffering equals
+          skill.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-1 text-sm leading-relaxed"
+      >
+        <h2
+          class="text-xl font-bold uppercase tracking-tight lg:text-base lg:font-normal lg:normal-case lg:text-black/50 lg:dark:text-white/50"
+        >
+          When NOT to use
+        </h2>
+        <div>
+          <p>— a heavy client-side app with shared state everywhere</p>
+          <p>— real-time collaborative tools</p>
+          <p>— interfaces where literally everything is interactive</p>
+          <p>— complex offline-first behavior</p>
+        </div>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">instead use</p>
+        <p class="mt-6">
+          React/Next, SvelteKit, Remix, whatever works. Astro is for sites that
+          behave like websites, with selective "app" bullshit only where it
+          belongs.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-1 text-sm leading-relaxed"
+      >
+        <h2
+          class="text-xl font-bold uppercase tracking-tight lg:text-base lg:font-normal lg:normal-case lg:text-black/50 lg:dark:text-white/50"
+        >
+          About bloat
+        </h2>
+        <div>
+          <p>
+            If you use Astro correctly, it <strong
+              >does not ship what you don't use</strong
+            >. That's the whole point, genius.
+          </p>
+          <p class="mt-3">
+            If your Astro site ships 500KB of JavaScript, congratulations: you
+            ignored the entire philosophy and rebuilt a SPA like a complete
+            idiot.
+          </p>
+          <p class="mt-3">
+            That's not Astro's fault. That's you being addicted to unnecessary
+            complexity like it's heroin.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-1 text-sm leading-relaxed"
+      >
+        <h2
+          class="text-xl font-bold uppercase tracking-tight lg:text-base lg:font-normal lg:normal-case lg:text-black/50 lg:dark:text-white/50"
+        >
+          The real problem
+        </h2>
+        <div>
+          <p>
+            The real problem is developers who can't evaluate the job and treat
+            tool choice like a personality trait or a religion.
+          </p>
+        </div>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">
+          pick based on reality
+        </p>
+        <div class="mt-6">
+          <p>
+            — Content-heavy with selective interactivity? <strong>Astro.</strong
+            >
+          </p>
+          <p>
+            — Highly interactive, stateful client app? <strong
+              >React/Next/whatever.</strong
+            >
+          </p>
+          <p>
+            — Somewhere in between? <strong
+              >Think for five goddamn seconds.</strong
+            >
+          </p>
+        </div>
+
+        <p class="text-black/50 dark:text-white/50 mt-6">advice</p>
+        <p class="mt-6">
+          Stop treating tools like identity. It's engineering. Act like a
+          professional.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-16">
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl font-bold leading-[0.9] tracking-tighter uppercase"
+      >
+        Now go ship<br />something fast
+      </h2>
+      <p class="text-sm mt-4 max-w-lg">
+        If you're building a mostly-content website and still reaching for a
+        full SPA: you're not being advanced. You're being lazy, insecure, and
+        shit at trade-offs. Go build something that loads fast, ships less
+        JavaScript, and doesn't actively hate your users.
+      </p>
+    </section>
+
+    <footer class="mt-16 pt-8 border-t border-black/10 dark:border-white/10">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-x-12 gap-y-1 text-sm leading-relaxed"
+      >
+        <p class="text-black/50 dark:text-white/50">inspirations</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1">
+          <a
+            href="https://motherfuckingwebsite.com/"
+            target="_blank"
+            rel="noopener"
+            class="hover:underline">motherfuckingwebsite.com</a
+          >
+          <a
+            href="https://justfuckingusetailwind.com/"
+            target="_blank"
+            rel="noopener"
+            class="hover:underline">justfuckingusetailwind.com</a
+          >
+          <a
+            href="https://justfuckingusehttp.com/"
+            target="_blank"
+            rel="noopener"
+            class="hover:underline">justfuckingusehttp.com</a
+          >
+          <a
+            href="https://justfuckingusereact.com/"
+            target="_blank"
+            rel="noopener"
+            class="hover:underline">justfuckingusereact.com</a
+          >
+          <a
+            href="https://justfuckingusecss.com/"
+            target="_blank"
+            rel="noopener"
+            class="hover:underline">justfuckingusecss.com</a
+          >
+          <a
+            href="https://www.justfuckinguserails.com/"
+            target="_blank"
+            rel="noopener"
+            class="hover:underline">justfuckinguserails.com</a
+          >
+        </div>
+      </div>
+      <p class="text-xs text-black/40 dark:text-white/40 mt-8">
+        Now stop reading and go fucking build something.
+      </p>
+    </footer>
+  </Wrapper>
+</BaseLayout>

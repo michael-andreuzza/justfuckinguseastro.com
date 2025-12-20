@@ -1,0 +1,558 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<BaseLayout>
+  <Wrapper variant="standard" class="py-16 lg:py-24">
+    <header
+      class="min-h-[50vh] flex flex-col justify-center pb-16"
+    >
+      <h1
+        class="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-bold leading-[0.85] tracking-tighter uppercase mb-3"
+      >
+        Just fucking<br />use Astro
+      </h1>
+      <p
+        class="text-lg sm:text-xl md:text-2xl leading-snug max-w-2xl mb-3 text-black/70 dark:text-white/70"
+      >
+        (Unless you're building an actual app, you sweet, fragile,
+        over-engineering dipshit motherfucker.)
+      </p>
+      <p
+        class="text-xs sm:text-sm text-black/60 dark:text-white/60 border-l-2 border-current pl-4 max-w-xl"
+      >
+        This rant was written by <a
+          href="https://michaelandreuzza.com/"
+          class="underline hover:opacity-60">Michael Andreuzza</a
+        > the motherfucker who made this fucking rant fucking possible when he had
+        nothing to do.
+      </p>
+    </header>
+
+    <section class="mt-12">
+      <p class="text-lg sm:text-xl leading-relaxed max-w-3xl mb-3">
+        <strong class="font-semibold"
+          >Most sites are content plus a few interactive bits.</strong
+        ><br />
+        If you're shipping a full SPA for a fucking marketing site, you're not "modern."
+        You're a goddamn irresponsible jackass, lazy as shit with architecture, and
+        actively making the web a worse fucking shithole for everyone. Fuck you.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-4xl sm:text-5xl md:text-6xl font-bold leading-none tracking-tight uppercase mb-4"
+      >
+        What the fuck is this shit?
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        This is a public service announcement for braindead dumbass
+        motherfucking developers still building websites like it's 2012 <em
+          >or</em
+        > 2022 and acting proud of it like they invented sliced fucking bread, you
+        absolute morons.
+      </p>
+      <p class="text-base sm:text-lg leading-relaxed mb-3">
+        You've got two equally stupid fucking religions:
+      </p>
+      <ul
+        class="max-w-3xl mb-4 space-y-4"
+      >
+        <li class="text-base sm:text-lg leading-relaxed">
+          <strong class="font-semibold">"No frameworks ever."</strong> Congrats,
+          you fucking idiot, you rebuilt a worse CMS with worse routing, worse builds,
+          and zero goddamn guardrails. Your shitty site is one junior dev away from
+          collapsing into an unreadable pile of HTML sadness, tears, and your own
+          fucking incompetence, dipshit.
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          <strong class="font-semibold">"SPA for everything."</strong> Congrats,
+          you pretentious motherfucker, you shipped hundreds of kilobytes of JavaScript
+          bullshit to render a headline, three buttons, and your fragile fucking
+          ego. Your users didn't consent to running your frontend thesis in their
+          browser, you selfish piece of shit asshole.
+        </li>
+      </ul>
+      <p class="text-base sm:text-lg leading-relaxed mb-4">
+        Astro exists because most of the goddamn web is:
+      </p>
+      <ul class="flex flex-wrap gap-2 mb-3">
+        <li
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 text-sm sm:text-base"
+        >
+          fucking pages
+        </li>
+        <li
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 text-sm sm:text-base"
+        >
+          fucking content
+        </li>
+        <li
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 text-sm sm:text-base"
+        >
+          fucking navigation
+        </li>
+        <li
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 text-sm sm:text-base"
+        >
+          fucking forms
+        </li>
+        <li
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 text-sm sm:text-base"
+        >
+          a couple fucking interactive widgets
+        </li>
+      </ul>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl">
+        Not a goddamn desktop application duct-taped into a browser tab with
+        delusions of grandeur, you delusional assclown.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-4xl sm:text-5xl md:text-6xl font-bold leading-none tracking-tight uppercase mb-4"
+      >
+        Why Astro instead of "pure HTML"?
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        Because "pure HTML" at scale is a fucking lie you tell yourself until
+        the site hits page 37 and everything quietly catches fire and burns down
+        around you like your pathetic career, motherfucker.
+      </p>
+      <p class="text-base sm:text-lg leading-relaxed mb-4">
+        Then this shit happens, asshole:
+      </p>
+      <ul
+        class="max-w-3xl mb-4 space-y-4"
+      >
+        <li class="text-base sm:text-lg leading-relaxed">
+          you copy and paste layouts like it's 2009 and you've learned
+          absolutely fucking nothing, you braindead bastard
+        </li>
+        <li class="py-4 text-base sm:text-lg leading-relaxed">
+          your "tiny bit of JS" becomes a cursed spaghetti altar of suffering
+          and bullshit
+        </li>
+        <li class="py-4 text-base sm:text-lg leading-relaxed">
+          content turns into an untyped clusterfuck no one fucking understands
+        </li>
+        <li class="py-4 text-base sm:text-lg leading-relaxed">
+          the build process becomes duct tape, shell scripts, prayers, and
+          eventual fucking alcoholism because of your incompetence
+        </li>
+      </ul>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        Astro gives you structure without forcing you into "everything must be
+        client-side or you're a fucking coward," you spineless shit.
+      </p>
+      <p class="text-base sm:text-lg leading-relaxed mb-4">
+        You get, motherfucker:
+      </p>
+      <ul
+        class="max-w-3xl mb-4 space-y-4"
+      >
+        <li class="text-base sm:text-lg leading-relaxed">
+          components without joining a goddamn JS framework cult like a
+          brainwashed idiot
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          actual layouts instead of copy-paste hell, dumbass
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          sane file-based routing that doesn't make you want to fucking scream
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          typed content collections so you stop shipping broken frontmatter like
+          a fucking amateur piece of shit
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          the ability to use React, Vue, Svelte, or whatever the fuck <em
+            >only</em
+          > when needed
+        </li>
+      </ul>
+      <p class="text-xl sm:text-2xl font-semibold leading-snug max-w-3xl">
+        And yes, this is still true in December 2025: Astro ships zero
+        client-side JavaScript by default. No tricks. No asterisks. No bullshit
+        hydration tax. Nothing.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-4xl sm:text-5xl md:text-6xl font-bold leading-none tracking-tight uppercase mb-4"
+      >
+        Why not just use React?
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-4">
+        Because React is great. For apps, dipshit.
+      </p>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        Most websites are not fucking apps, no matter how much you desperately
+        want them to be, you delusional motherfucker.
+      </p>
+      <p class="text-base sm:text-lg leading-relaxed mb-4">If your site is:</p>
+      <ul class="flex flex-wrap gap-2 mb-3">
+        <li
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 text-sm sm:text-base font-medium"
+        >
+          marketing pages
+        </li>
+        <li
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 text-sm sm:text-base font-medium"
+        >
+          docs
+        </li>
+        <li
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 text-sm sm:text-base font-medium"
+        >
+          a blog
+        </li>
+        <li
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 text-sm sm:text-base font-medium"
+        >
+          landing pages
+        </li>
+        <li
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 text-sm sm:text-base font-medium"
+        >
+          ecommerce front
+        </li>
+      </ul>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        …then shipping a full SPA is like bringing a fucking forklift to carry a
+        motherfucking sandwich, then congratulating yourself for "scalability"
+        and "best practices," you insufferable jackass.
+      </p>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl">
+        Astro is the "HTML-first, JS-when-needed" workflow that SPA developers <em
+          >say</em
+        > they follow and then immediately ignore like the lying motherfucking bastards
+        they are.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-4xl sm:text-5xl md:text-6xl font-bold leading-none tracking-tight uppercase mb-4"
+      >
+        Islands Architecture
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        Here's the mental model. Pay the fuck attention, dipshit motherfucker.
+      </p>
+      <p class="text-2xl sm:text-3xl font-bold leading-tight max-w-2xl mb-4">
+        Your page is static by default. Interactivity is the exception, not the
+        fucking rule.
+      </p>
+      <div class="grid grid-cols-3 gap-6 max-w-md mb-4">
+        <div
+          class="text-center"
+        >
+          <p class="text-xs text-black/60 dark:text-white/60 mb-1">Carousel?</p>
+          <p class="font-bold">Island</p>
+        </div>
+        <div
+          class="text-center"
+        >
+          <p class="text-xs text-black/60 dark:text-white/60 mb-1">Pricing toggle?</p>
+          <p class="font-bold">Island</p>
+        </div>
+        <div
+          class="text-center"
+        >
+          <p class="text-xs text-black/60 dark:text-white/60 mb-1">Search?</p>
+          <p class="font-bold">Island</p>
+        </div>
+      </div>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        Everything else stays server-rendered, boring, fast, and quiet — like a
+        well-behaved website that respects its users.
+      </p>
+      <p class="text-base sm:text-lg leading-relaxed mb-4">
+        That fucking means:
+      </p>
+      <ul
+        class="max-w-3xl mb-4 space-y-4"
+      >
+        <li class="text-base sm:text-lg leading-relaxed">
+          dramatically less JavaScript shipped to innocent users who didn't ask
+          for your bullshit
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          fewer hydration nightmares that wake your dumbass up at 3am
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          fewer "why did this fucking re-render?" panic attacks and Slack
+          meltdowns
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          a page that works immediately instead of after a JS warm-up ritual
+          from hell that you created, asshole
+        </li>
+      </ul>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl">
+        You don't need to hydrate the fucking world, you absolute moron. You
+        need to hydrate the <em>one</em> damn widget and leave the rest the fuck
+        alone, jackass.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-4xl sm:text-5xl md:text-6xl font-bold leading-none tracking-tight uppercase mb-4"
+      >
+        When to use Astro
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed mb-4">
+        Just fucking use Astro when:
+      </p>
+      <ul
+        class="max-w-3xl mb-4 space-y-4"
+      >
+        <li class="text-base sm:text-lg leading-relaxed">
+          your site is mostly content with some UI sprinkled on top, dumbass
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          SEO actually matters and isn't just bullshit buzzwords in your shitty
+          deck
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          you want components without paying a stupid fucking SPA performance
+          tax
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          you want React or Svelte only where it makes sense, not everywhere
+          like a goddamn lunatic
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          your interactivity is localized instead of infecting the whole goddamn
+          page like a fucking virus
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          you want a site that doesn't turn into a maintenance nightmare at 50+
+          pages because you're too stupid to plan ahead
+        </li>
+      </ul>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl">
+        If you're thinking "but I can do that with vanilla JS", yes, and you can
+        also eat soup with a fucking fork, you masochistic dipshit. Stop
+        pretending that suffering equals skill, you self-righteous martyr
+        asshole.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-4xl sm:text-5xl md:text-6xl font-bold leading-none tracking-tight uppercase mb-4"
+      >
+        When NOT to use Astro
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed mb-4">
+        Astro is not your magic wand if you're building:
+      </p>
+      <ul
+        class="max-w-3xl mb-4 space-y-4"
+      >
+        <li class="text-base sm:text-lg leading-relaxed">
+          a heavy client-side app with shared state everywhere, jackass
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          real-time collaborative tools for fuck's sake
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          interfaces where literally everything is interactive all the fucking
+          damn time
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          complex offline-first behavior that you'll probably fuck up anyway
+        </li>
+      </ul>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        If your UI is basically a constantly running program, stop cosplaying as
+        a website like a fucking poser and just fucking use:
+      </p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 font-bold"
+          >React / Next</span
+        >
+        <span
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 font-bold"
+          >SvelteKit</span
+        >
+        <span
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 font-bold"
+          >Remix</span
+        >
+        <span
+          class="px-4 py-2 bg-black/5 dark:bg-white/10 font-bold"
+          >Whatever works</span
+        >
+      </div>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl">
+        Astro is for sites that behave like websites, with selective "app"
+        bullshit only where it belongs.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-4xl sm:text-5xl md:text-6xl font-bold leading-none tracking-tight uppercase mb-4"
+      >
+        "But what about bloat?"
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        If you use Astro correctly, it <strong class="font-semibold"
+          >does not ship what you don't use</strong
+        >. That's the whole fucking point, genius. Are you fucking stupid?
+      </p>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        If your Astro site ships 500KB of JavaScript, congratulations: you
+        ignored the entire goddamn philosophy and rebuilt a SPA like a complete
+        fucking idiot. You dumb motherfucker.
+      </p>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl">
+        That's not Astro's fault, dumbass. That's you being addicted to
+        unnecessary complexity like it's fucking heroin. Get help, asshole.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-4xl sm:text-5xl md:text-6xl font-bold leading-none tracking-tight uppercase mb-4"
+      >
+        The real problem
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-3">
+        The real problem is developers who can't evaluate the fucking job and
+        treat tool choice like a personality trait or a religion. You're the
+        fucking problem, asshole.
+      </p>
+      <p class="text-base sm:text-lg leading-relaxed mb-4">
+        Pick based on reality, not your pathetic feelings:
+      </p>
+      <ul
+        class="max-w-3xl mb-4 space-y-4"
+      >
+        <li class="text-base sm:text-lg leading-relaxed">
+          Content-heavy with selective interactivity? <strong
+            class="font-semibold">Astro, dipshit.</strong>
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          Highly interactive, stateful client app? <strong class="font-semibold"
+            >React/Next/whatever, asshole.</strong>
+        </li>
+        <li class="text-base sm:text-lg leading-relaxed">
+          Somewhere in between? <strong class="font-semibold"
+            >Think for five goddamn seconds before copy-pasting last year's
+            architecture.</strong>
+        </li>
+      </ul>
+      <p class="text-base sm:text-lg leading-relaxed max-w-3xl">
+        Stop treating tools like identity, you insecure motherfucker. It's
+        engineering. Act like a goddamn professional for once in your worthless
+        career.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <h2
+        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tighter uppercase mb-4"
+      >
+        Now go ship something fast
+      </h2>
+      <p class="text-lg sm:text-xl leading-relaxed max-w-3xl mb-3">
+        If you're building a mostly-content website and still reaching for a
+        full SPA like a fucking amateur: you're not being advanced, dipshit.
+        You're being lazy, insecure, and shit at trade-offs like the incompetent
+        motherfucker you are.
+      </p>
+      <p class="text-lg sm:text-xl leading-relaxed max-w-3xl">
+        Go build something that loads fast, ships less JavaScript, and doesn't
+        actively hate your users, you piece of shit. Now fuck off and code.
+      </p>
+    </section>
+
+    <footer class="mt-12">
+      <p class="text-base sm:text-lg leading-relaxed mb-3">
+        <strong class="font-semibold"
+          >Also: if you want the fucking vibe, these were the obvious goddamn
+          inspirations, you curious bastard:</strong
+        >
+      </p>
+      <ul
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+      >
+        <li>
+          <a
+            href="https://motherfuckingwebsite.com/"
+            target="_blank"
+            rel="noopener"
+            class="text-sm hover:opacity-60 transition-opacity underline"
+            >motherfuckingwebsite.com</a
+          >
+          <span class="text-sm text-black/60 dark:text-white/60"> — fucking classic</span>
+        </li>
+        <li>
+          <a
+            href="https://justfuckingusetailwind.com/"
+            target="_blank"
+            rel="noopener"
+            class="text-sm hover:opacity-60 transition-opacity underline"
+            >justfuckingusetailwind.com</a
+          >
+          <span class="text-sm text-black/60 dark:text-white/60"> — fucking dope</span>
+        </li>
+        <li>
+          <a
+            href="https://justfuckingusehttp.com/"
+            target="_blank"
+            rel="noopener"
+            class="text-sm hover:opacity-60 transition-opacity underline"
+            >justfuckingusehttp.com</a
+          >
+          <span class="text-sm text-black/60 dark:text-white/60"> — the OG shit</span>
+        </li>
+        <li>
+          <a
+            href="https://justfuckingusereact.com/"
+            target="_blank"
+            rel="noopener"
+            class="text-sm hover:opacity-60 transition-opacity underline"
+            >justfuckingusereact.com</a
+          >
+          <span class="text-sm text-black/60 dark:text-white/60">
+            — for when you actually need it</span
+          >
+        </li>
+        <li>
+          <a
+            href="https://justfuckingusecss.com/"
+            target="_blank"
+            rel="noopener"
+            class="text-sm hover:opacity-60 transition-opacity underline"
+            >justfuckingusecss.com</a
+          >
+          <span class="text-sm text-black/60 dark:text-white/60"> — stop fighting it, dipshit</span>
+        </li>
+        <li>
+          <a
+            href="https://www.justfuckinguserails.com/"
+            target="_blank"
+            rel="noopener"
+            class="text-sm hover:opacity-60 transition-opacity underline"
+            >justfuckinguserails.com</a
+          >
+          <span class="text-sm text-black/60 dark:text-white/60"> — Ruby motherfuckers unite</span>
+        </li>
+      </ul>
+      <p class="text-base sm:text-lg leading-relaxed mt-8 italic text-black/60 dark:text-white/60">
+        Now stop reading and go fucking build something, asshole.
+      </p>
+    </footer>
+  </Wrapper>
+</BaseLayout>
